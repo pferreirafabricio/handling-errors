@@ -1,0 +1,2 @@
+# categorize-error-messages
+🌋
