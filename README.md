@@ -63,8 +63,6 @@ External errors can’t be prevented because you simply are not in control of th
 Integration tests are well suited for testing external errors against your application.
 External errors should face plenty of error handling because you have no choice other than to let your application break!
 
-### What makes good error data?
-
 #### Accuracy and Precision
 
 Precision:
@@ -204,6 +202,27 @@ Explain unfamiliar concepts.
 
 In case you're not sure if a particular action in the app is a bug, it's a good idea to check the documentation and consult the issue with a more experienced team member.
 
+---
+
+One school of thought suggests using exceptions for flow control. This is not a good approach because it makes the code harder to reason about. The caller must know the implementation details and which exceptions to handle.
+
+Exceptions are for exceptional situations.
+
+Using exceptions for flow control is an approach to implement the fail-fast principle.
+
+As soon as you encounter an error in the code, you throw an exception — effectively terminating the method, and making the caller responsible for handling the exception.
+
+The problem is the caller must know which exceptions to handle. And this isn't obvious from the method signature alone.
+
+Since you already expect potential errors, why not make it explicit?
+
+You can group all application errors into two groups:
+
+- Errors you know how to handle
+- Errors you don't know how to handle
+
+Exceptions are an excellent solution for the errors you don't know how to handle. And you should catch and handle them at the lowest level possible.
+
 ## 📚 References
 
 - [The Error Handbook, Part 1 – Two Ways to Categorize Errors](https://spin.atomicobject.com/categorize-software-errors/)
@@ -212,6 +231,7 @@ In case you're not sure if a particular action in the app is a bug, it's a good 
 - [Categorising Errors-and how to handle them](https://bootcamp.uxdesign.cc/oops-something-went-wrong-7db5aaab0b57)
 - [Railway oriented programming - A recipe for a functional app, part 2](https://fsharpforfunandprofit.com/posts/recipe-part2/)
 - [Best practices for reporting bugs in web projects (and much more)](https://career.comarch.com/blog/best-practices-for-reporting-bugs-in-web-projects-and-much-more/)
+- [Functional Error Handling in .NET With the Result Pattern](https://www.milanjovanovic.tech/blog/functional-error-handling-in-dotnet-with-the-result-pattern)
 
 ## Ideas
 

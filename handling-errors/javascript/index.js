@@ -8,7 +8,6 @@
  */
 
 const DEFAULT_JSON_URL_API = "https://jsonplaceholder.typicode.com/todos/1";
-const DEFAULT_XML_URL_API = "https://jsonplaceholder.typicode.com/todos/1";
 
 /**
  * @returns {PlaceholderResponse}
