@@ -223,6 +223,15 @@ You can group all application errors into two groups:
 
 Exceptions are an excellent solution for the errors you don't know how to handle. And you should catch and handle them at the lowest level possible.
 
+---
+
+Don't use Result if:
+
+- If you need the exception stack trace
+- If you don't plan to handle the failure
+- If you care about performance (allocations)
+- If you can't recover from a failure - it's simpler to throw an exception
+
 ## 📚 References
 
 - [The Error Handbook, Part 1 – Two Ways to Categorize Errors](https://spin.atomicobject.com/categorize-software-errors/)
