@@ -12,6 +12,11 @@ It is structured into multiple sub-projects, each focusing on different programm
 
 Additionally, this project includes references to external resources for further reading on error handling, suggesting a comprehensive approach to understanding and implementing error management in software projects.
 
+This project is part of a series of studies about error handling and classification. Check out the other projects:
+
+- [classify-error-messages](https://github.com/pferreirafabricio/classify-error-messages)
+- [simple-railway](https://github.com/pferreirafabricio/simple-railway)
+
 > [!NOTE]
 > This project is a resource to help me improve my error handling strategies across different programming languages and paradigms and understanding more the concepts of "error", "failures", "exception", etc.
 
