@@ -1,4 +1,4 @@
-# categorize-error-messages
+# handling-errors
 
 🌋
 
