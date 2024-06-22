@@ -21,12 +21,12 @@ public class JsonPlaceholderService
                 body => JsonSerializer.Deserialize<PlaceholderResponse>(body),
                 new(ErrorType.InvalidInput, "Error deserializing response body")
             )
-            .Tap(_ => Console.WriteLine($"Passing through the first tap"))
-            .Tap(_ => Console.WriteLine($"Passing through the second tap"))
             .Bind(data => data is null
                 ? Result.Failure<PlaceholderResponse>(new(ErrorType.InvalidInput, "Response body is not in the expected format"))
                 : Result.Success(data)
             )
+            .Tap(_ => Console.WriteLine($"Passing through the first tap"))
+            .Tap(_ => Console.WriteLine($"Passing through the second tap"))
             .Match(
                 data => Result.Success(data),
                 error => error.Code switch
